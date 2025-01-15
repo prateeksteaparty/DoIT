@@ -11,7 +11,7 @@ export const TaskList = ({ tasks, toggleTask }) => {
       ))}
       {completedTasks.length > 0 && (
         <>
-          <h2 className="text-lg font-medium mt-8 mb-4">Completed</h2>
+          <h2 className="text-lg font-medium mt-8 mb-4 dark:text-white">Completed</h2>
           {completedTasks.map(task => (
             <TaskItem key={task.id} task={task} toggleTask={toggleTask} isCompleted />
           ))}

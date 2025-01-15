@@ -1,40 +1,87 @@
-import { List, Calendar, Star, Menu, User, Plus} from 'lucide-react';
+import { List, Calendar, Star, Menu, User, Plus } from 'lucide-react';
+import { useState } from 'react';
 
 export const Sidebar = () => {
-  return (
-    <div className="w-64 bg-white p-6 border-r ">
-      <div className="flex items-center mb-8">
-        <div className="w-12 h-12 rounded-full bg-gray-200" />
-        <p className="ml-4 text-gray-700">Hey, ABCD</p>
-      </div>
+  const [activeButton, setActiveButton] = useState('allTasks');
 
+  const handleButtonClick = (buttonName) => {
+    setActiveButton(buttonName);
+  };
+
+  return (
+    <div className="w-64 bg-white p-4 dark:bg-[#232323] dark:text-white shadow-xl">
+      <div className="flex items-center mb-8">
+        <div className="w-12 h-12 rounded-full overflow-hidden">
+          <img
+            src="public/pfp.jpg" 
+            alt="Profile"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <p className="ml-4 text-gray-700 dark:text-white">Hey, Pratik</p>
+      </div>
       <nav className="space-y-2">
-        <button className="flex items-center w-full p-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+        <button
+          onClick={() => handleButtonClick('allTasks')}
+          className={`flex items-center w-full p-3 ${
+            activeButton === 'allTasks'
+              ? 'bg-green-50 dark:bg-[#357937] text-gray-700 dark:text-white'
+              : 'text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-[#357937]'
+          } rounded-lg`}
+          aria-label="View all tasks"
+        >
           <List className="w-5 h-5 mr-3" />
           All Tasks
         </button>
-        <button className="flex items-center w-full p-3 bg-green-50 text-gray-700 rounded-lg">
+        <button
+          onClick={() => handleButtonClick('today')}
+          className={`flex items-center w-full p-3 ${
+            activeButton === 'today'
+              ? 'bg-green-50 dark:bg-[#357937] text-gray-700 dark:text-white'
+              : 'text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-[#357937]'
+          } rounded-lg`}
+          aria-label="View today's tasks"
+        >
           <Calendar className="w-5 h-5 mr-3" />
           Today
         </button>
-        <button className="flex items-center w-full p-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+        <button
+          onClick={() => handleButtonClick('important')}
+          className={`flex items-center w-full p-3 ${
+            activeButton === 'important'
+              ? 'bg-green-50 dark:bg-[#357937] text-gray-700 dark:text-white'
+              : 'text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-[#357937]'
+          } rounded-lg`}
+          aria-label="View important tasks"
+        >
           <Star className="w-5 h-5 mr-3" />
           Important
         </button>
-        <button className="flex items-center w-full p-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+        <button
+          onClick={() => handleButtonClick('planned')}
+          className={`flex items-center w-full p-3 ${
+            activeButton === 'planned'
+              ? 'bg-green-50 dark:bg-[#357937] text-gray-700 dark:text-white'
+              : 'text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-[#357937]'
+          } rounded-lg`}
+          aria-label="View planned tasks"
+        >
           <Menu className="w-5 h-5 mr-3" />
           Planned
         </button>
-        <button className="flex items-center w-full p-3 text-gray-700 hover:bg-gray-100 rounded-lg">
+        <button
+          onClick={() => handleButtonClick('assignedToMe')}
+          className={`flex items-center w-full p-3 ${
+            activeButton === 'assignedToMe'
+              ? 'bg-green-50 dark:bg-[#357937] text-gray-700 dark:text-white'
+              : 'text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-[#357937]'
+          } rounded-lg`}
+          aria-label="View tasks assigned to me"
+        >
           <User className="w-5 h-5 mr-3" />
           Assigned to me
         </button>
       </nav>
-
-      <button className="flex items-center w-full p-3 mt-6 text-gray-700 hover:bg-gray-100 rounded-lg">
-        <Plus className="w-5 h-5 mr-3" />
-        Add list
-      </button>
     </div>
   );
 };

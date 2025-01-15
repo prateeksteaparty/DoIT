@@ -2,7 +2,7 @@ import { RefreshCw, Calendar, Bell } from 'lucide-react';
 export const AddTaskForm = ({ newTask, setNewTask, handleAddTask }) => {
     return (
       <form onSubmit={handleAddTask} className="mb-8">
-        <div className="flex items-center gap-4 p-4 bg-green-50 rounded-lg">
+        <div className="flex items-center gap-4 p-4 bg-green-50 rounded-lg dark:bg-[#2F3630] dark:text-white">
           <input
             type="text"
             placeholder="Add A Task"
