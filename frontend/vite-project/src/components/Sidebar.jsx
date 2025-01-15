@@ -13,7 +13,7 @@ export const Sidebar = () => {
       <div className="flex items-center mb-8">
         <div className="w-12 h-12 rounded-full overflow-hidden">
           <img
-            src="public/pfp.jpg" 
+            src="/pfp.jpg" 
             alt="Profile"
             className="w-full h-full object-cover"
           />
