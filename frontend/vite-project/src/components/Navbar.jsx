@@ -15,7 +15,7 @@ export function Navbar({ toggleSidebar, toggleRightSidebar }) {
         <button onClick={toggleSidebar} className="p-2">
           <Menu className="w-6 h-6" />
         </button>
-        <img src="public/logo-todo.png" alt="Logo" className="pl-1 w-25 h-10 ml-2 object-contain" />
+        <img src="/logo-todo.png" alt="Logo" className="pl-1 w-25 h-10 ml-2 object-contain" />
       </div>
       <div className="flex items-center gap-2">
         <button
