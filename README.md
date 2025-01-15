@@ -11,9 +11,8 @@ DoIT is a task management application designed to help you organize, track, and 
 
 ## Screenshots
 
-![App Screenshot]([https://ibb.co/HgG3yrb])
-
-*(Include a screenshot of your application here, if possible)*
+![App Screenshot 1](https://i.ibb.co/XyqPMdg/ss1.png)
+![App Screenshot 2](https://i.ibb.co/NYWbqLJ/ss2.png)
 
 ## Installation
 
